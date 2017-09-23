@@ -12,3 +12,14 @@ defscrollback 10000
 bindkey "^n" next
 bindkey "^p" prev
 bindkey "^t" screen
+
+# name windows after last invoked program
+# taken from http://stackoverflow.com/questions/2068806/gnu-screen-can-you-automatically-name-a-window-after-the-last-invoked-program
+# add the following to your .profile:
+# export PS1='\[\033k\033\\\]'$PS1
+shelltitle "$ |bash"
+
+# Enable mouse scrolling and scroll bar history scrolling with xterm
+# source: https://unix.stackexchange.com/a/40246
+termcapinfo xterm* ti@:te@
+
