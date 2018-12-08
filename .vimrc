@@ -103,9 +103,9 @@ augroup java
 	" vim-javacomplete2
 	autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 	autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-	nmap <C-I> <Plug>(JavaComplete-Imports-Add)
-	nmap <C-S-I> <Plug>(JavaComplete-Imports-RemoveUnused)
-	imap <C-S-I> <Plug>(JavaComplete-Imports-RemoveUnused)
+	autocmd Filetype java nmap <C-I> <Plug>(JavaComplete-Imports-Add)
+	autocmd Filetype java nmap <C-S-I> <Plug>(JavaComplete-Imports-RemoveUnused)
+	autocmd Filetype java imap <C-S-I> <Plug>(JavaComplete-Imports-RemoveUnused)
 augroup END
 
 " VIM-GO
