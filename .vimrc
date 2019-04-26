@@ -39,6 +39,10 @@ set autoindent
 set smartindent
 set cursorline
 
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
 " tab navigation like firefox
 :nmap <C-p> :tabprevious<CR>
 :nmap <C-n> :tabnext<CR>
@@ -74,7 +78,7 @@ endif
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' }
-Plug 'fatih/vim-go', { 'tag': 'v1.19' }
+Plug 'fatih/vim-go', { 'tag': 'v1.20' }
 Plug 'Townk/vim-autoclose', { 'commit': 'a9a3b7384657bc1f60a963fd6c08c63fc48d61c3' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'commit': '325a1298b0c9d8a4c61388a2f9956a534a9068cd' }
 Plug 'airblade/vim-gitgutter', { 'commit': 'c2651aefbd92dca05de1943619df965b848f9b4f' }
@@ -116,10 +120,11 @@ augroup go
   let g:go_list_type = "quickfix"                     	" make all lists of type quickfix
   let g:go_fmt_command = "goimports"										" runs goimports when we save a file
   " let g:go_metalinter_autosave = 1											" runs GoMetaLinter on every save
+  let g:go_metalinter_command='golangci-lint'
   let g:go_highlight_types = 1													" syntax highlighting for types
   let g:go_highlight_fields = 1													" syntax highlighting for fields
   let g:go_highlight_functions = 1											" syntax highlighting for functions
-  let g:go_guru_scope = ["..."]
+  " let g:go_guru_scope = ["..."]
   
   let g:go_gocode_unimported_packages = 0
   let g:go_gocode_autobuild = 1
