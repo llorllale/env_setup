@@ -53,6 +53,23 @@ set shiftwidth=2
 :nmap <C-t> :tabnew<CR>
 :imap <C-t> <Esc>:tabnew<CR>
 
+if has("clipboard")
+      " CTRL-X and SHIFT-Del are Cut
+      vnoremap <C-X> "+x
+      " vnoremap <S-Del> "+x
+      
+      " CTRL-C and CTRL-Insert are Copy
+      vnoremap <C-C> "+y
+      " vnoremap <C-Insert> "+y
+      
+      " CTRL-V and SHIFT-Insert are Paste
+      " map <C-V>   "+gP
+      " map <S-Insert>    "+gP
+      
+      " cmap <C-V>    <C-R>+
+      " cmap <S-Insert>   <C-R>+
+endif
+
 " pretty print xml
 :map <C-B><C-X> :execute '% !xmlstarlet format -s 2'<CR>
 " pretty print json
