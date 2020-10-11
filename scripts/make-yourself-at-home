@@ -1,0 +1,4 @@
+#!/bin/bash
+
+screen -c .screenrc-home
+

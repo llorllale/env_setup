@@ -1,0 +1,6 @@
+#!/bin/bash
+
+transmission-daemon
+sleep 2
+stig
+

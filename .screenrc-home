@@ -1,0 +1,34 @@
+startup_message off
+
+hardstatus alwayslastline 
+# Very nice tabbed colored hardstatus line
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+
+autodetach on
+
+defscrollback 10000
+
+bindkey "^n" next
+bindkey "^p" prev
+bindkey "^t" screen
+
+# name windows after last invoked program
+# taken from http://stackoverflow.com/questions/2068806/gnu-screen-can-you-automatically-name-a-window-after-the-last-invoked-program
+# add the following to your .profile:
+# export PS1='\[\033k\033\\\]'$PS1
+shelltitle "$ |bash"
+
+# Enable mouse scrolling and scroll bar history scrolling with xterm
+# source: https://unix.stackexchange.com/a/40246
+termcapinfo xterm* ti@:te@
+
+screen -t htop htop
+screen -t ytop ytop -b -p -s
+screen -t torrent torrent
+screen -t music mocp
+screen -t yt-music mpsyt
+screen -t rss canto-curses
+screen -t weechat weechat
+screen -t reddit ttrv
+screen -t hackernews hnterm
+
